@@ -2,11 +2,9 @@ require("dotenv").config()
 const express = require('express');
 const sequelize = require("./db.js");
 const http = require('http')
-const cors = require('cors');
 const registerMessageHandlers = require('./handlers/messageHandlers')
 
 const app = express();
-app.use(cors());
 const server = http.createServer(app);
 const PORT = process.env.PORT
 
