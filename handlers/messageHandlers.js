@@ -7,12 +7,12 @@ module.exports = (io, socket) => {
         let data = messages.map((i) => {
             return i.dataValues
         })
-        console.log(data)
         io.in(socket.sharedRoom).emit('messages', data);
     }
 
     const addMessage = async (message) => {
-        await Message.create({messageText: message.messageText, tagList: message.tagList});
+        let currentTagList = message.tagList.join(" ")
+        await Message.create({messageText: message.messageText, tagList: currentTagList});
         await getMessages();
     }
 
