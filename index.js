@@ -12,7 +12,7 @@ const PORT = process.env.PORT
 
 const socketIO = require('socket.io')(server, {
     cors: {
-        origin: "https://chat-app-bscx.onrender.com/"
+        origin: "https://chat-app-bscx.onrender.com:10000"
     }
 });
 const onConnection = (socket) => {
